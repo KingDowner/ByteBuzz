@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteBuzz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="ByteBuzz.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Welcome to ByteBuzz!</h1>
+        </header>
+        <section>
+            <h2>Instructions</h2>
+            <p>Select a number between 1 and 30 and we will replace the multiples of 3 with 'Byte', multiples of 5 with 'Rush', and multiples of both with 'ByteRush'.</p>
+        </section>
+        <section>
+            <label for="numberInput">Enter a number between 1 and 30:</label>
+            <input type="number" id="numberInput" placeholder="Enter a number here." min="1" max="30">
+            <button id="submitButton">Submit</button>
+        </section>
+        <section>
+            <h2>Output</h2>
+            <div id="results"></div>
+        </section>
+    </main>
+</body>
+</html>

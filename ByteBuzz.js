@@ -1,24 +1,40 @@
-console.log("Welcome to ByteBuzz!");
+// ByteBuzz Algorithm
+function generateByteBuzz(number) {
+  let sequence = "";
 
-console.log(
-  "Select a number between 1 and 30 and we will replace the multiples of 3 with 'Byte', multiples of 5 with 'Rush', and multiples of both with 'ByteRush'.",
-);
+  for (let count = 1; count <= number; count++) {
+    let output;
 
-let myNumber = 30;
-
-if (myNumber >= 1 && myNumber <= 30) {
-  console.log("You selected: " + myNumber);
-  for (let count = 1; count <= myNumber; count++) {
     if (count % 3 === 0 && count % 5 === 0) {
-      console.log("ByteRush");
+      output = "ByteRush";
     } else if (count % 3 === 0) {
-      console.log("Byte");
+      output = "Byte";
     } else if (count % 5 === 0) {
-      console.log("Rush");
+      output = "Rush";
     } else {
-      console.log(count);
+      output = count;
     }
+
+    sequence += output + "\n";
   }
-} else {
-  console.log("Invalid Number. Please select a number between 1 and 30.");
+
+  return sequence;
 }
+
+// Button Event Listener
+const submitButton = document.getElementById("submitButton");
+
+submitButton.addEventListener("click", function () {
+  const results = document.getElementById("results");
+  const numberInput = document.getElementById("numberInput");
+
+  const myNumber = Number(numberInput.value);
+
+  if (myNumber >= 1 && myNumber <= 30 && Number.isInteger(myNumber)) {
+    const sequence = generateByteBuzz(myNumber);
+    results.textContent = sequence;
+  } else {
+    results.textContent =
+      "Invalid Number. Please select a number between 1 and 30.";
+  }
+});
